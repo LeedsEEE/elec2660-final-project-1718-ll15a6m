@@ -17,4 +17,7 @@
 
 - (IBAction)addEvent:(id)sender;
 
+-(void)getAccess;
+
+
 @end

@@ -36,7 +36,13 @@ static NSString * const reuseIdentifier = @"Cell";
     
     BOOL sectionHeadersPinToVisibleBounds = YES;
     
-    
+    EKEventStore *store = [[EKEventStore alloc] init];
+    if([store respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+        
+        [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+            /* This code will run when uses has made his/her choice */
+        }];
+    }
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -61,6 +67,8 @@ static NSString * const reuseIdentifier = @"Cell";
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 #pragma mark <UICollectionV	iewDataSource>
 
@@ -136,13 +144,17 @@ static NSString * const reuseIdentifier = @"Cell";
     controller.eventStore = eventStore;
     controller.editViewDelegate = self;
     [self presentModalViewController: controller animated:YES];
+    
+    EKEventStore *store = [[EKEventStore alloc] init];
+    if([store respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+        
+        [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+            /* This code will run when uses has made his/her choice */
+        }];
+    }
+}
+    
+
+    @end
 
     
-    
-    
-    
-    
-    
-    
-}
-@end
