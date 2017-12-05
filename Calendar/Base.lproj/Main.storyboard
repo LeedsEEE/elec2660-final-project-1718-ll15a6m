@@ -81,6 +81,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="Label1" destination="h9w-kb-uq8" id="Lhi-BO-rld"/>
+                                    <outlet property="btn" destination="NTj-rR-zGg" id="mNh-gA-UPF"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

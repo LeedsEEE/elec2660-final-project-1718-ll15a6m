@@ -88,6 +88,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Configure the cell
     cell.Label1.text = month[indexPath.row];
+    cell.btn.tag = indexPath.row;
     
     return cell;
 }

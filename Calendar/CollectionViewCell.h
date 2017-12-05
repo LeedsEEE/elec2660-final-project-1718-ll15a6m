@@ -10,5 +10,6 @@
 
 @interface CollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *Label1;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
 
 @end
