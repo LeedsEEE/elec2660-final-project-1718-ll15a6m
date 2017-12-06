@@ -12,11 +12,21 @@
 
 @end
 
+int theYear;
+int theMonth;
+int firstDayOfMonth;
+int numOfDaysInMonth;
+
+
+
 @implementation MonthViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    
+    
     
 }
 
@@ -27,9 +37,13 @@
 
 
 - (IBAction)lastMonth:(id)sender {
+    
+    theMonth--;
 }
 
 - (IBAction)nextMonth:(id)sender {
+    
+    theMonth++;
 }
 
 - (IBAction)back:(id)sender {

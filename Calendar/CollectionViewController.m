@@ -7,9 +7,7 @@
 //
 
 #import "CollectionViewController.h"
-#import "CollectionViewCell.h"
-#import "CollectionReusableView.h"
-#import "MonthViewController.h"
+
 
 @interface CollectionViewController ()
 {
@@ -23,10 +21,23 @@ NSArray *year;
 
 @implementation CollectionViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.indexPaths = [NSArray array];
+    }
+    return self;
+}
+
+
 static NSString * const reuseIdentifier = @"Cell";
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     month = @[ @"JAN" , @"FEB", @"MAR", @"APR", @"MAY", @"JUN", @"JUL", @"AUG", @"SEP", @"OCT", @"NOV", @"DEC" ];
     
@@ -34,23 +45,10 @@ static NSString * const reuseIdentifier = @"Cell";
     
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 3, 20, 3);
-    
-    
-    EKEventStore *store = [[EKEventStore alloc] init];
-    if([store respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-        
-        [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-            /* This code will run when uses has made his/her choice */
-        }];
-    }
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Register cell classes
     //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,28 +56,22 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showMonthView"]) {
+        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+        self.indexPaths = [NSArray array];
+        MonthViewController *destViewController = segue.destinationViewController;
+        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+        destViewController.yearLabel = year[indexPath.section];
+        destViewController.monthLabel = month[indexPath.item];
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    }
+    
 }
 */
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if(year.count >0){
-    if ([segue.identifier isEqualToString:@"showMonthView"]) {
-        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
-        MonthViewController *destViewController = segue.destinationViewController;
-        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
-        destViewController.yearLabel= year[indexPath.section];
-        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
-    }
-}
-}
 
 #pragma mark <UICollectionV	iewDataSource>
 
@@ -123,14 +115,14 @@ static NSString * const reuseIdentifier = @"Cell";
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPaths {
 	return YES;
 }
-*/
 
-/*
+
+
 // Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPaths {
     return YES;
 }
 */

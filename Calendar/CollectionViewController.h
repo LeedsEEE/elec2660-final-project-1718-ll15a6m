@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <EventKitUI/EventKitUI.h>
+#import "CollectionViewCell.h"
+#import "CollectionReusableView.h"
+#import "MonthViewController.h"
 
 @interface CollectionViewController : UICollectionViewController < UICollectionViewDataSource, UICollectionViewDelegate, EKEventEditViewDelegate >
 
-
-
-@property(nonatomic) BOOL sectionHeadersPinToVisibleBounds;
+@property(strong, nonatomic) NSArray *indexPaths;
 
 - (IBAction)addEvent:(id)sender;
 
