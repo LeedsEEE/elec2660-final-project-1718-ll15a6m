@@ -35,6 +35,15 @@ int numOfDaysInMonth;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)yearUpdate{
+    if (theMonth>12) {
+        theYear++;
+    }
+    if (theMonth<1) {
+        theYear--;
+    }
+    
+}
 
 - (IBAction)lastMonth:(id)sender {
     
