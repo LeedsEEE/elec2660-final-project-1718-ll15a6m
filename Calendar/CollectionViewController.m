@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
 #import "CollectionReusableView.h"
+#import "MonthViewController.h"
 
 @interface CollectionViewController ()
 {
@@ -34,7 +35,6 @@ static NSString * const reuseIdentifier = @"Cell";
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 3, 20, 3);
     
-    BOOL sectionHeadersPinToVisibleBounds = YES;
     
     EKEventStore *store = [[EKEventStore alloc] init];
     if([store respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
@@ -69,6 +69,16 @@ static NSString * const reuseIdentifier = @"Cell";
 */
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showMonthView"]) {
+        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+        MonthViewController *destViewController = segue.destinationViewController;
+        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+        destViewController.yearLabel= [year[indexPath.section] objectAtIndex:indexPath.row];
+        destViewController.monthLabel= [month[indexPath.section] objectAtIndex:indexPath.row];
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    }
+}
 
 #pragma mark <UICollectionV	iewDataSource>
 
@@ -106,6 +116,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     return header;
 }
+
 
 #pragma mark <UICollectionViewDelegate>
 

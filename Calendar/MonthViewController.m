@@ -32,6 +32,12 @@
 - (IBAction)nextMonth:(id)sender {
 }
 
+- (IBAction)back:(id)sender {
+
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
 
 @end
 
