@@ -70,14 +70,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if(year.count >0){
     if ([segue.identifier isEqualToString:@"showMonthView"]) {
         NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
         MonthViewController *destViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
-        destViewController.yearLabel= [year[indexPath.section] objectAtIndex:indexPath.row];
-        destViewController.monthLabel= [month[indexPath.section] objectAtIndex:indexPath.row];
+        destViewController.yearLabel= year[indexPath.section];
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
     }
+}
 }
 
 #pragma mark <UICollectionV	iewDataSource>
@@ -110,7 +111,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
         CollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
 
-        header.sectionTitle.text = year[indexPath.row];;
+        header.sectionTitle.text = year[indexPath.section];
 
 
     
