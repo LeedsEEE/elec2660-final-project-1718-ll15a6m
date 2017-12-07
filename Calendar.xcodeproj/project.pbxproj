@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C29DA9B1FD99E430023333E /* AgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C29DA9A1FD99E430023333E /* AgendaTableViewController.m */; };
+		2C29DA9D1FD99E500023333E /* Calendar in Resources */ = {isa = PBXBuildFile; fileRef = 2C29DA9C1FD99E500023333E /* Calendar */; };
 		2C2CF4001FD2BD8400E45E18 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CF3FF1FD2BD8400E45E18 /* CollectionViewController.m */; };
 		2C2CF4031FD2BD8400E45E18 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CF4021FD2BD8400E45E18 /* CollectionViewCell.m */; };
 		2C2CF4061FD2D55D00E45E18 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CF4051FD2D55D00E45E18 /* CollectionReusableView.m */; };
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C29DA991FD99E430023333E /* AgendaTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgendaTableViewController.h; sourceTree = "<group>"; };
+		2C29DA9A1FD99E430023333E /* AgendaTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgendaTableViewController.m; sourceTree = "<group>"; };
+		2C29DA9C1FD99E500023333E /* Calendar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Calendar; sourceTree = "<group>"; };
 		2C2CF3FE1FD2BD8400E45E18 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		2C2CF3FF1FD2BD8400E45E18 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		2C2CF4011FD2BD8400E45E18 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 		2C4D4DF91FC68D6C00767F29 = {
 			isa = PBXGroup;
 			children = (
+				2C29DA9C1FD99E500023333E /* Calendar */,
 				2C4D4E041FC68D6C00767F29 /* Calendar */,
 				2C4D4E1D1FC68D6C00767F29 /* CalendarTests */,
 				2C4D4E281FC68D6C00767F29 /* CalendarUITests */,
@@ -132,6 +138,8 @@
 				2C4D4E051FC68D6C00767F29 /* AppDelegate.h */,
 				2C4D4E061FC68D6C00767F29 /* AppDelegate.m */,
 				2C4D4E0B1FC68D6C00767F29 /* Main.storyboard */,
+				2C29DA991FD99E430023333E /* AgendaTableViewController.h */,
+				2C29DA9A1FD99E430023333E /* AgendaTableViewController.m */,
 				2CC97F481FD32A8A00CF764F /* MonthViewController.h */,
 				2CC97F491FD32A8A00CF764F /* MonthViewController.m */,
 				2CC97F451FD3208A00CF764F /* SearchTableViewController.h */,
@@ -276,6 +284,7 @@
 			files = (
 				2C4D4E121FC68D6C00767F29 /* LaunchScreen.storyboard in Resources */,
 				2C4D4E0F1FC68D6C00767F29 /* Assets.xcassets in Resources */,
+				2C29DA9D1FD99E500023333E /* Calendar in Resources */,
 				2C4D4E0D1FC68D6C00767F29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +315,7 @@
 				2C4D4E151FC68D6C00767F29 /* main.m in Sources */,
 				2CC97F471FD3208B00CF764F /* SearchTableViewController.m in Sources */,
 				2CC97F4A1FD32A8A00CF764F /* MonthViewController.m in Sources */,
+				2C29DA9B1FD99E430023333E /* AgendaTableViewController.m in Sources */,
 				2C2CF4031FD2BD8400E45E18 /* CollectionViewCell.m in Sources */,
 				2C4D4E071FC68D6C00767F29 /* AppDelegate.m in Sources */,
 			);

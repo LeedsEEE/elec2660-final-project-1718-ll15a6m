@@ -51,7 +51,7 @@ int dayOfWeek;
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSRange rng = [cal rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:myDate];
     NSUInteger numOfDaysInMonth = rng.length;
-    NSLog(@"NumberOfDaysInMonth%d", numOfDaysInMonth);
+    
     return numOfDaysInMonth;
 }
 

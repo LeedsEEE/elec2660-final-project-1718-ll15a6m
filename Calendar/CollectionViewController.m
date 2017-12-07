@@ -38,6 +38,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _indexPaths = [[NSArray alloc]init];
     
     month = @[ @"JAN" , @"FEB", @"MAR", @"APR", @"MAY", @"JUN", @"JUL", @"AUG", @"SEP", @"OCT", @"NOV", @"DEC" ];
     
@@ -61,7 +62,6 @@ static NSString * const reuseIdentifier = @"Cell";
 /*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showMonthView"]) {
         NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
-        self.indexPaths = [NSArray array];
         MonthViewController *destViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         destViewController.yearLabel = year[indexPath.section];

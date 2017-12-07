@@ -18,6 +18,11 @@
 
 - (IBAction)addEvent:(id)sender;
 
+
+@property(weak, nonatomic) NSArray *year;
+
+@property(weak, nonatomic) NSArray *month;
+
 -(void)getAccess;
 
 
